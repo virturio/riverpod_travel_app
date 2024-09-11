@@ -13,8 +13,8 @@ class TripLocalDatasource extends TripDatasource {
   }
 
   @override
-  void deleteTrip(TripModel trip) {
-    tripBox.delete(trip);
+  void deleteTrip(int index) {
+    tripBox.deleteAt(index);
   }
 
   @override

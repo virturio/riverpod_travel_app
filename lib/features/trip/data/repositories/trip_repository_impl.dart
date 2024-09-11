@@ -15,8 +15,8 @@ class TripRepositoryImpl extends TripRepository {
   }
 
   @override
-  Future<void> deleteTrip(Trip trip) async {
-    return dataSource.deleteTrip(TripModel.fromEntity(trip));
+  Future<void> deleteTrip(int index) async {
+    return dataSource.deleteTrip(index);
   }
 
   @override
