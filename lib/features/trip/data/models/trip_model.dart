@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:riverpod_travel_app/features/trip/domain/entities/trip.dart';
 
 part 'trip_model.g.dart';
 
@@ -22,4 +23,24 @@ class TripModel {
     required this.photos,
     required this.location,
   });
+
+  factory TripModel.fromEntity(Trip trip) {
+    return TripModel(
+      title: trip.title,
+      photos: trip.photos,
+      description: trip.description,
+      date: trip.date,
+      location: trip.location,
+    );
+  }
+
+  Trip toEntity() {
+    return Trip(
+      title: title,
+      photos: photos,
+      description: description,
+      date: date,
+      location: location,
+    );
+  }
 }
